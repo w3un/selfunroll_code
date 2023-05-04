@@ -3,24 +3,25 @@
 
 Scene Dynamic Recovery (SDR) by inverting distorted Rolling shutter (RS) images to an undistorted high frame-rate Global Shutter (GS) video is a severely ill-posed problem due to the missing temporal dynamic information in both RS intra-frame scanlines and inter-frame exposures, particularly when prior knowledge about camera/object motions is unavailable. Commonly used artificial assumptions on scenes/motions and data-specific characteristics are prone to producing sub-optimal solutions in real-world scenarios. To address this challenge, we propose an event-based SDR network within a self-supervised learning paradigm, i.e., SelfUnroll. We leverage the extremely high temporal resolution of event cameras to provide accurate inter/intra-frame dynamic information. Specifically, an Event-based Inter/intra-frame Compensator (E-IC) is proposed to predict the per-pixel dynamic between arbitrary time intervals, including the temporal transition and spatial translation. Exploring connections in terms of RS-RS, RS-GS, and GS-RS, we explicitly formulate mutual constraints with the proposed E-IC, resulting in supervisions without ground-truth GS images. Extensive evaluations over synthetic and real datasets demonstrate that the proposed method achieves state-of-the-art and shows remarkable performance for event-based RS2GS inversion in real-world scenarios.
 
+
 <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="./figs/gev.png" width = "75%" alt=""/>
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+<div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #000;
     padding: 2px;">
       Quantitative comparisons on Gev-RS dataset
   	</div>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="./figs/gev.png" width = "75%" alt=""/>
+    <br>
+    
 </center>
 
 ## Environment setup
 - Python 3.8.0
 - Pytorch 1.11.0
-- opencv-python 3.4.2
-- NVIDIA GPU + CUDA
+- NVIDIA GPU + CUDA 11.2
 - numpy, argparse
 
 You can create a new [Anaconda](https://www.anaconda.com/products/individual) environment as follows.
