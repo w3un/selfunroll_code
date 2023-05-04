@@ -85,7 +85,7 @@ python test.py --Dataset Drereal --RSpath path_of_data --test_unroll_path ../Pre
 - `--RSpath` : path of dataset.
 - `--test_unroll_path` : path of pretrain model.
 - `--save_path` : path of reconstruction results.
-- `--target` : timestamp of target GS frame ((0/1 represents the exposure time of first/last scanline)).
+- `--target` : timestamp of target GS frame (0/1 represents the exposure time of first/last scanline).
 
 ## Citation
 If you find our work useful in your research, please cite:
