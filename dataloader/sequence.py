@@ -369,9 +369,7 @@ class sequence_gevreal(Dataset):
         return int((len(self.RS_file) - 1) )
 
     def __getitem__(self, index):
-        # index +=48
-        if self.mode == 'train':
-            index=index+self.test_len
+        
         RS_path = Path(self.RS_file[index])
         rs1 = self.get_img_file(RS_path)
         RS_path = Path(self.RS_file[index + 1])
@@ -424,7 +422,7 @@ class sequence_gevreal(Dataset):
 
         x, y, p, t = filter_events_by_space(self.x, self.y, self.p, self.t, cx, cx + self.crop_sz_W)
         y, x, p, t = filter_events_by_space(y, x, p, t, cy, cy + self.crop_sz_H)
-        t, x, y, p = filter_events_by_space(t, x, y, p, rs1_start[0] - 0.7 * (rs1_end[-1] - rs1_start[0]), rs2_end[-1])
+        t, x, y, p = filter_events_by_space(t, x, y, p, rs1_start[0], rs2_end[-1])
         x = x - cx
         y = y - cy
 
